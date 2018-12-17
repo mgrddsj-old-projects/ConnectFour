@@ -1,5 +1,5 @@
 
-#Board
+# Board
 
 int[][] board = new int[7][6]; //[column][row]
     1 = Yellow (X)
