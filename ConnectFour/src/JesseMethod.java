@@ -11,8 +11,16 @@ public class JesseMethod
 		//Just some testing by Jesse Xu.
 		int[][] board = new int[7][6];
 		board[5][5] = 1;
+		board[5][4] = 1;
+		//board[6][5] = 1;
+		//board[4][3] = 1;
+		//board[3][2] = 1;
+		board[6][2] = 2;
+		board[5][3] = 2;
 		board[4][4] = 2;
-		printTheBoard(board);
+		board[3][5] = 2;
+ 		printTheBoard(board);
+ 		check(board);
 	}
 
     public static void printTheBoard(int[][] board)
@@ -96,13 +104,15 @@ public class JesseMethod
     	
     	//Check top left to bottom right
     	
-    	for (int row=0;row<=3;row++)
+    	for (int row=0;row<=2;row++)
     	{
-    		for (int column=0;column<=4;column++)
+    		for (int column=0;column<=3;column++)
     		{
     			int temp = board[column][row];
+    			if (temp==0)
+    				continue;
     			int time = 0;
-    			for (int i=0;i<=4;i++)
+    			for (int i=0;i<=3;i++)
     			{
     				if (board[i+column][i+row] != temp)
     				{
@@ -111,11 +121,55 @@ public class JesseMethod
     				else 
     				{
     					//Equals. 
+    					time++;
+    					if (time==4)
+    					{
+    						wins = true;
+    						who = temp;
+        					break;
+    					}
     				}
     			}
     		}
     	}
     	
     	//Check top right to bottom left
+    	
+    	for (int row=0;row<=2;row++)
+    	{
+    		for (int column=3;column<=6;column++)
+    		{
+    			int temp = board[column][row];
+    			if (temp==0)
+    				continue;
+    			int time = 0;
+    			for (int i=0;i>=-4;i--)
+    			{
+    				if (board[column+i][row-i] != temp)
+    				{
+    					break;
+    				}
+    				else 
+    				{
+    					//Equals. 
+    					time++;
+    					if (time==4)
+    					{
+    						wins = true;
+    						who = temp;
+    						break;
+    					}
+    				}
+    			}
+    		}
+    	}
+    	
+    	if (wins)
+    	{
+    		if (who == 1)
+    			System.out.println("Yellow wins! ");
+    		else 
+    			System.out.println("Red wins! ");
+    	}
     }
 }
