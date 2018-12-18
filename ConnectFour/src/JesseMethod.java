@@ -95,13 +95,23 @@ public class JesseMethod
     	}
     	
     	//Check top left to bottom right
+    	
     	for (int row=0;row<=3;row++)
     	{
     		for (int column=0;column<=4;column++)
     		{
+    			int temp = board[column][row];
+    			int time = 0;
     			for (int i=0;i<=4;i++)
     			{
-    				
+    				if (board[i+column][i+row] != temp)
+    				{
+    					break;
+    				}
+    				else 
+    				{
+    					//Equals. 
+    				}
     			}
     		}
     	}
