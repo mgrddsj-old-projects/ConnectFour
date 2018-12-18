@@ -42,4 +42,70 @@ public class JesseMethod
 				System.out.println("-------------");
 		}
     }
+    
+    public static void check(int[][] board)
+    {
+    	boolean wins = false;
+    	int who = 0;
+    	
+    	//Check horizontally
+    	for (int row=0;row<6;row++)
+    	{
+    		int continuous = 0;
+    		for (int column=1;column<7;column++)
+    		{
+    			if (board[column][row] == board[column-1][row] && board[column][row]!=0)
+    			{
+    				continuous++;
+    				if (continuous == 3)
+    				{
+    					//someone wins
+    					wins = true;
+    					who = board[column][row];
+    				}
+    			}
+    			else 
+    			{
+    				continuous = 0;
+    			}
+    		}
+    	}
+    	
+    	//Check vertically
+    	for (int column=0;column<7;column++)
+    	{
+    		int continuous = 0;
+    		for (int row=1;row<6;row++)
+    		{
+    			if (board[column][row] == board[column][row-1] && board[column][row]!=0)
+    			{
+    				continuous++;
+    				if (continuous == 3)
+    				{
+    					//someone wins
+    					wins = true;
+    					who = board[column][row];
+    				}
+    			}
+    			else 
+    			{
+    				continuous = 0;
+    			}
+    		}
+    	}
+    	
+    	//Check top left to bottom right
+    	for (int row=0;row<=3;row++)
+    	{
+    		for (int column=0;column<=4;column++)
+    		{
+    			for (int i=0;i<=4;i++)
+    			{
+    				
+    			}
+    		}
+    	}
+    	
+    	//Check top right to bottom left
+    }
 }
