@@ -1,11 +1,6 @@
 import java.util.Random;
 import java.util.Scanner;
 
-/* Jesse's note: 
- * Please do not touch this file. I've finished the whole thing last night. Just in case we cannot finish today. 
- * It's a great practice to take. Try doing it yourself. 
- */
-
 public class Game 
 {
 	public static boolean wins = false;
