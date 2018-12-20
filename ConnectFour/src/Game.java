@@ -34,7 +34,7 @@ public class Game
 		{
 			System.out.println("Player " + player + "'s turn: ");
 			boolean bomb = false;
-			if (rand.nextInt(5) == 2)
+			if (rand.nextInt(15) == 2)
 			{
 				System.out.println("Lucky you! You've got a bomb. It will destroy 3x3 area around it! ");
 				bomb = true;
@@ -206,6 +206,7 @@ public class Game
 			if (row != 5)
 				System.out.println("-------------");
 		}
+    	System.out.println("1|2|3|4|5|6|7");
     }
     
     public static void check(int[][] board)
