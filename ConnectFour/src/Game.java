@@ -189,24 +189,24 @@ public class Game
 			{
 				if (board[column][row] == 1)
 				{
-					System.out.print("Y");
+					System.out.print("🔶");
 				}
 				else if (board[column][row] == 2)
 				{
-					System.out.print("R");
+					System.out.print("🔴");
 				}
 				else 
 				{
-					System.out.print(" ");
+					System.out.print("  ");
 				}
 				if (column != 6)
-					System.out.print("|");
+					System.out.print("| ");
 			}
 			System.out.println();
 			if (row != 5)
-				System.out.println("-------------");
+				System.out.println("--------------------------");
 		}
-    	System.out.println("1|2|3|4|5|6|7");
+    	System.out.println("1 | 2 | 3 | 4  | 5 | 6 | 7 ");
     }
     
     public static void check(int[][] board)
